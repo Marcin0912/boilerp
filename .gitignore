@@ -2,6 +2,7 @@
 *.log
 tmp
 src
+.sass-cache
 node_modules
 imagesbak
 bower_components
