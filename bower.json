@@ -16,9 +16,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.4",
     "fullpage": "~2.6.5",
     "wow": "~1.1.2",
-    "animate.css": "~3.2.6"
+    "animate.css": "~3.2.6",
+    "foundation": "~5.5.2"
   }
 }
