@@ -4,6 +4,9 @@ tmp
 src
 .sass-cache
 node_modules
+img
+css
+js
 imagesbak
 bower_components
 build
