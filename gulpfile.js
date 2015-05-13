@@ -15,7 +15,7 @@ var config = require('./gulp.config')();
 
 // Static server
 
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['wiredep'], function() {
     log('Starting server ...');
     browserSync.init({server: config.server});
 
@@ -29,9 +29,9 @@ gulp.task('clean-styles', function(done) {
     clean(config.temp + '**/*.css', done);
 });
 
-gulp.task('sass', ['wiredep'], function() {
+gulp.task('sass', function() {
     log('Compiling Sass -> CSS');
-    return $.sass(config.scss, {sourcemap: true})
+    return $.sass(config.scss, {sourcemap: true, compass: true})
         .on('error', function(err) {
             console.log('Error', err.message);
         })
@@ -46,7 +46,7 @@ gulp.task('sass', ['wiredep'], function() {
         // .pipe(reload({stream: true}));
 });
 
-gulp.task('wiredep', ['clean-styles'],  function() {
+gulp.task('wiredep', ['clean-styles', 'sass'],  function() {
     var options = config.getWiredepDefaultOptions();
     log('Wire up the bower css js and custom js into the html');
     var wiredep = require('wiredep').stream;
