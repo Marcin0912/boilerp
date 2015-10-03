@@ -1,4 +1,5 @@
 .DS_Store
+gulp.2
 *.log
 tmp
 src
